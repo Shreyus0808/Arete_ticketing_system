@@ -1,32 +1,57 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import user from "../images/user.png";
 
 function Dashboard() {
   return (
-    <div className="bg-[#E9E9E9] w-full h-screen">
-      <h1 className="py-6 text-center flex justify-start text-xl pb-10">
-        Dashboard
-      </h1>
-      <div className="bg-white rounded-2xl">
-        <h1 className="text-3xl  pt-10 font-bold pl-5">Hi</h1>
-        <h1 className="text-3xl pl-5 text-[#40E0D0] p-4 border-b-4 font-sans font-bold text-6xl ">John Doe!</h1>
-        <p className="">
-          Welcome back to Arete. Hope you are having a nice day.
-        </p>
-      </div>
-      <div className="bg-white rounded-2xl pt-10">
-        <h1 className="text-xl  pl-5">Your Monthly Report</h1>
-        <div className="flex">
-          <h1>24</h1>
-          <p>TICKETS CLOSED THIS MONTH</p>
-          <h1>06</h1>
-          <p>PENDING TICKETS</p>
-          <h1>80%</h1>
-          <p>YOUR MONTHLY SCORE</p>
+    <>
+      <div className="w-full h-screen p-4 px-6 bg-[#E9E9E9] flex flex-col divide-y-[3px]  divide-[#AAAAAA]">
+        <div className="flex justify-between pb-1.5">
+          <h2 className=" font-sans font-bold text-3xl text-[#AAAAAA]">
+            Dashboard
+          </h2>
+          <img src={user} className="w-10 h-10 z-10"></img>
+        </div>
+        <div className="flex flex-col  justify-between px-0 p-4 ">
+          <div className="bg-white p-2 rounded-xl divide-y-4">
+            <div>
+              <p className="text-2xl font-bold p-6 ">Hi</p>
+              <p className="text-6xl pl-5 font-extrabold text-[#40E0D0]">
+                John Doe!
+              </p>
+            </div>
+            <p className=" p-6 font-semibold text-sm pl-5">
+              Welcome back to Arete. Hope you are having a nice day.
+            </p>
+          </div>
+          <div className="pt-6">
+            <div className="bg-white p-2 rounded-xl divide-y-4">
+              <div>
+                <p className="text-base font-semibold p-6 tracking-tight ">
+                  Your Monthly Report
+                </p>
+              </div>
+              <div className="grid grid-cols-3 pt-10">
+                <div className="text-center flex items-center flex-col">
+                  <p className="text-7xl font-extrabold">24</p>
+                  <p className="text-gray-300 pt-3 w-44">
+                    TICKETS CLOSED THIS MONTH
+                  </p>
+                </div>
+                <div className="text-center flex items-center flex-col">
+                  <p className="text-7xl font-extrabold">06</p>
+                  <p className="text-gray-300 pt-3 w-44">PENDING TICKET</p>
+                </div>
+                <div className="text-center flex items-center flex-col">
+                  <p className="text-7xl font-extrabold">80%</p>
+                  <p className="text-gray-300 pt-3 w-44">YOUR MONTHLY SCORE</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div className=""></div>
-    </div>
+    </>
   );
 }
 
