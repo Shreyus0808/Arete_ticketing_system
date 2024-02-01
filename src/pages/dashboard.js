@@ -7,8 +7,8 @@ function Dashboard() {
         Dashboard
       </h1>
       <div className="bg-white rounded-2xl">
-        <h1 className="text-xl pt-10  pl-5">Hi</h1>
-        <h1 className="text-3xl pl-5 text-[#40E0D0] border-b-4">John Doe!</h1>
+        <h1 className="text-3xl  pt-10 font-bold pl-5">Hi</h1>
+        <h1 className="text-3xl pl-5 text-[#40E0D0] p-4 border-b-4 font-sans font-bold text-6xl ">John Doe!</h1>
         <p className="">
           Welcome back to Arete. Hope you are having a nice day.
         </p>
