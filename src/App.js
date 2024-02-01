@@ -8,17 +8,8 @@ import React, { useEffect } from "react";
 import "./App.css";
 import dashboard from "./pages/dashboard.js";
 import Sidebar from "./components/sidebar.js";
-import Overview from "./pages/overview.js";
+import tickets from "./pages/tickets.js";
 
-function ScrollToTop() {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  return null;
-}
 
 function App() {
   document.body.style = "background: #ffffffff";
@@ -27,10 +18,9 @@ function App() {
       <div className="flex ">
         <Sidebar />
         <div className="w-full">
-          <ScrollToTop />
           <Switch>
             <Route path="/" exact component={dashboard} />
-            <Route path="/overview" exact component={Overview} />
+            <Route path="/tickets" exact component={tickets} />
           </Switch>
         </div>
       </div>
