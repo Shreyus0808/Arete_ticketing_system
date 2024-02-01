@@ -7,7 +7,6 @@ import {
 import React, { useEffect } from "react";
 import "./App.css";
 import dashboard from "./pages/dashboard.js";
-import Navbar from "./components/navbar.js";
 import Sidebar from "./components/sidebar.js";
 
 function ScrollToTop() {
@@ -27,7 +26,6 @@ function App() {
       <div className="flex ">
         <Sidebar />
         <div className="w-full">
-          <Navbar />
           <ScrollToTop />
           <Switch>
             <Route path="/" exact component={dashboard} />

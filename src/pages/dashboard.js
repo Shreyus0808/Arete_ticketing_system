@@ -2,38 +2,30 @@ import React from "react";
 
 function Dashboard() {
   return (
-    <div>
-      <div className="pt-10 text-center pb-10">
-        <button className="border shadow-xl text-3xl w-44 hover:bg-slate-100">
-          Add Ticket
-        </button>
+    <div className="bg-[#E9E9E9] w-full h-screen">
+      <h1 className="py-6 text-center flex justify-start text-xl pb-10">
+        Dashboard
+      </h1>
+      <div className="bg-white rounded-2xl">
+        <h1 className="text-xl pt-10  pl-5">Hi</h1>
+        <h1 className="text-3xl pl-5 text-[#40E0D0] border-b-4">John Doe!</h1>
+        <p className="">
+          Welcome back to Arete. Hope you are having a nice day.
+        </p>
       </div>
-      <div className="grid grid-cols-6  bg-slate-400">
-        <div className="text-center ">Project Name </div>
-        <div className="text-center">Skills Required </div>
-        <div className="text-center">Ticket Description</div>
-        <div className="text-center">Ticket Status </div>
-        <div className="text-center">Priority</div>
-        <div className="text-center">ETA </div>
-      </div>
-      <div className="grid grid-cols-6 pt-5">
-        <div className="text-center">Happy Homes </div>
-        <div className="text-center">Mern Stack </div>
-        <div className="text-center">
-          Logbook module, documentation and handover report
+      <div className="bg-white rounded-2xl pt-10">
+        <h1 className="text-xl  pl-5">Your Monthly Report</h1>
+        <div className="flex">
+          <h1>24</h1>
+          <p>TICKETS CLOSED THIS MONTH</p>
+          <h1>06</h1>
+          <p>PENDING TICKETS</p>
+          <h1>80%</h1>
+          <p>YOUR MONTHLY SCORE</p>
         </div>
-        <div className="text-center">Ongoing</div>
-        <div className="text-center">High</div>
-        <div className="text-center">12-02-2024 </div>
       </div>
-      <div className="grid grid-cols-6 pt-5">
-        <div className="text-center">Hala code </div>
-        <div className="text-center">React,Node.js </div>
-        <div className="text-center">business partner module,ui/ux</div>
-        <div className="text-center">Done</div>
-        <div className="text-center">Low</div>
-        <div className="text-center">14-02-2024 </div>
-      </div>
+
+      <div className=""></div>
     </div>
   );
 }
