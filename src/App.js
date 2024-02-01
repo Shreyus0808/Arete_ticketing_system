@@ -9,6 +9,7 @@ import "./App.css";
 import dashboard from "./pages/dashboard.js";
 import Sidebar from "./components/sidebar.js";
 import tickets from "./pages/tickets.js";
+import notifications from "./pages/notifications.js";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Switch>
             <Route path="/" exact component={dashboard} />
             <Route path="/tickets" exact component={tickets} />
+            <Route path="/notifications" exact component={notifications} />
           </Switch>
         </div>
       </div>
