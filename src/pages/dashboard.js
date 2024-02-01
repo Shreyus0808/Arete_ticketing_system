@@ -1,7 +1,10 @@
 import React from "react";
 
 function Dashboard() {
-  return <div className="">Open Logs</div>;
-}
+  return(
+  <div className="pt-10">
+    <button className="border">Add Ticket</button>
+    </div>)
+  }
 
-export default Dashboard;
+  export default Dashboard;
