@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function Dashboard() {
-  return (
-    <div className=''>Open Logs</div>
-  )
+  return <div className="">Open Logs</div>;
 }
 
-export default Dashboard
+export default Dashboard;
