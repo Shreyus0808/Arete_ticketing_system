@@ -8,6 +8,7 @@ import React, { useEffect } from "react";
 import "./App.css";
 import dashboard from "./pages/dashboard.js";
 import Sidebar from "./components/sidebar.js";
+import Overview from "./pages/overview.js";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -29,6 +30,7 @@ function App() {
           <ScrollToTop />
           <Switch>
             <Route path="/" exact component={dashboard} />
+            <Route path="/overview" exact component={Overview} />
           </Switch>
         </div>
       </div>
