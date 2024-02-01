@@ -3,7 +3,7 @@ import React from "react";
 function Sidebar() {
   return (
     <div className="">
-      <div className="h-screen w-52 bg-cyan-400 p-16">
+      <div className="h-screen w-52 bg-gradient-to-b from-slate-300 to-blue-600  p-16">
         <svg
           width="66"
           height="66"
@@ -25,7 +25,7 @@ function Sidebar() {
         <p className="pt-4 pb-44">User_name</p>
 
         <div className="text-xl shadow-sm ">
-          <button>Logbook</button>
+          <button>LOGBOOK</button>
         </div>
       </div>
     </div>
