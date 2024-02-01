@@ -1,4 +1,8 @@
 import React from "react";
+import img1 from "../images/image 2.png";
+import img2 from "../images/image 3.png";
+import img3 from "../images/image 4.png";
+import img4 from "../images/image 6.png";
 
 function Sidebar() {
   return (
@@ -9,11 +13,19 @@ function Sidebar() {
             ARETE
           </p>
         </div>
-        <div className="text-center flex flex-col font-league font-semibold spartan">
-          <button class="pt-10 pb-2 ">Dashboard</button>
-          <button class="pt-10 pb-2 ">Ticket</button>
-          <button class="pt-10 pb-2 ">Notification</button>
-          <button class="pt-10 pb-2 ">Setting</button>
+        <div className="text-center flex flex-col font-League font-semibold  text-lg  ">
+          <button class="py-4 border inline-flex items-center hover:bg-gray-200">
+            <img src={img1} className="p-3"></img>Dashboard
+          </button>
+          <button class="py-4 border flex items-center hover:bg-gray-200">
+            <img src={img2} className="p-3"></img>Tickets
+          </button>
+          <button class="py-4 border flex items-center  hover:bg-gray-200">
+            <img src={img3} className="p-3"></img>Notification
+          </button>
+          <button class="py-4 border flex items-center hover:bg-gray-200">
+            <img src={img4} className="p-3"></img>Setting
+          </button>
         </div>
       </div>
     </div>
