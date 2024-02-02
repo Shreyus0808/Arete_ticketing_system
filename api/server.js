@@ -98,15 +98,75 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/tickets", (req, res) => {
-  const q =
-    "SELECT u1.id AS assigned_to_id, u1.full_name AS assigned_to, p.project_name AS project ,t.ticket_status as status,u2.id AS assigned_by_id, u2.full_name AS assigned_by ,t.id as ticket_id, t.ticket_description as description, t.priority, eta FROM tickets t LEFT JOIN users u1 ON u1.id=t.user_id LEFT JOIN users u2 ON u2.id=t.assigned_by JOIN projects p on t.project_id = p.id";
-  db.query(q, (err, data) => {
-    if (err) {
-      return res.json(err);
-    }
-    return res.json(data);
-  });
+app.get("/tickets/:uid", (req, res) => {
+  const uid = req.params.uid;
+
+  let q =
+    "SELECT u1.id AS assigned_to_id, u1.full_name AS assigned_to, p.project_name AS project, t.ticket_status as status, u2.id AS assigned_by_id, u2.full_name AS assigned_by, t.id as ticket_id, t.ticket_description as description, t.priority, eta FROM tickets t LEFT JOIN users u1 ON u1.id=t.user_id LEFT JOIN users u2 ON u2.id=t.assigned_by JOIN projects p ON t.project_id = p.id";
+
+  if (uid !== "all") {
+    q += " WHERE u1.id=?";
+    db.query(q, [uid], (err, data) => {
+      if (err) {
+        return res.json(err);
+      }
+      return res.json(data);
+    });
+  } else {
+    db.query(q, (err, data) => {
+      if (err) {
+        return res.json(err);
+      }
+      return res.json(data);
+    });
+  }
+});
+
+app.get("/projects/:uid", (req, res) => {
+  const uid = req.params.uid;
+
+  let q =
+    "SELECT u1.id AS project_manager_id, u1.full_name AS project_manager, p.project_name AS project, p.project_status as status, p.start_date, p.end_date, p.id as project_id, p.project_description as description FROM projects p LEFT JOIN users u1 ON u1.id=p.project_manager_id";
+
+  if (uid !== "all") {
+    q += " WHERE u.id=?";
+    db.query(q, [uid], (err, data) => {
+      if (err) {
+        return res.json(err);
+      }
+      return res.json(data);
+    });
+  } else {
+    db.query(q, (err, data) => {
+      if (err) {
+        return res.json(err);
+      }
+      return res.json(data);
+    });
+  }
+});
+
+app.get("/notifications/:uid", (req, res) => {
+  const uid = req.params.uid;
+
+  let q = "SELECT * FROM notifications";
+
+  if (uid !== "all") {
+    q += " WHERE user_id=?";
+    db.query(q, [uid], (err, data) => {
+      if (err) {
+        return res.json(err);
+      }
+      return res.json(data);
+    });
+  } else {
+    db.query(q, (err, data) => {
+      if (err) {
+        return res.json(err);
+      }
+      return res.json(data);
+    });
+  }
 });
 
 app.listen(port, () => {

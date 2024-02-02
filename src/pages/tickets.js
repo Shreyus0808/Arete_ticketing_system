@@ -8,7 +8,7 @@ function Tickets() {
   const fetchTickets = async () => {
     try {
       const uid = 1;
-      const response = await api.get(`/tickets`);
+      const response = await api.get(`/tickets/all`);
       if (Array.isArray(response.data)) {
         setTickets(response.data.reverse());
       } else {
@@ -49,13 +49,22 @@ function Tickets() {
         return "";
     }
   };
+
+  const truncateText = (text, limit) => {
+    const words = text.split(" ");
+    if (words.length > limit) {
+      return words.slice(0, limit).join(" ") + "...";
+    }
+    return text;
+  };
+
   useEffect(() => {
     fetchTickets();
   }, []);
 
   return (
     <>
-      <div className="w-full  h-screen p-4 px-6 bg-[#E9E9E9] flex flex-col divide-y-[3px]  divide-[#AAAAAA]">
+      <div className="w-full  h-full p-4 px-6 bg-[#E9E9E9] flex flex-col divide-y-[3px]  divide-[#AAAAAA]">
         <div className="flex justify-between py-2 pb-5">
           <h2 className=" font-sans font-bold text-3xl text-[#AAAAAA]">
             Tickets
@@ -127,26 +136,35 @@ function Tickets() {
             <div className="grid grid-cols-8 text-center">
               <h3 className="font-bold">ID</h3>
               <h3 className="font-bold ">Ticket Status</h3>
-              <h3 className="font-bold  col-span-2">Description</h3>
+              <h3 className="font-bold text-left  col-span-2">Description</h3>
               <h3 className="font-bold ">Assigned By</h3>
               <h3 className="font-bold ">Project</h3>
               <h3 className="font-bold ">Priority</h3>
               <h3 className="font-bold ">ETA</h3>
             </div>
           </div>
-          <div className="bg-white rounded-xl">
-            <div className="grid grid-cols-8 text-center">
-              <h3 className="font-base">ID</h3>
-              <h3 className="font-base ">Ticket Status</h3>
-              <h3 className="font-base col-span-2">
-                Description kfvkjdshlkd kjsdjk skdjh sdkfj kdfjh kjdshf ksjdhfs
-                jkdsfh kjfhds idfsh kjhdf
-              </h3>
-              <h3 className="font-base ">Assigned By</h3>
-              <h3 className="font-base ">Project</h3>
-              <h3 className="font-base ">Priority</h3>
-              <h3 className="font-base ">ETA</h3>
-            </div>
+          <div className="bg-white rounded-xl divide-y-[3px] px-3 py-4">
+            {tickets.map((t) => (
+              <div className="grid grid-cols-8 text-center py-2">
+                <h3 className="font-base">{t.ticket_id}</h3>
+                <h3 className={`font-base inline-flex justify-center h-fit`}>
+                  <p
+                    className={`font-base w-20 p-1 rounded-md ${calculateStatusColor(
+                      t.status
+                    )}`}
+                  >
+                    {t.status}
+                  </p>
+                </h3>
+                <h3 className="font-base text-left col-span-2">
+                  {t.description}
+                </h3>
+                <h3 className="font-base ">{t.assigned_by}</h3>
+                <h3 className="font-base ">{t.project}</h3>
+                <h3 className="font-base ">{calculatePriority(t.priority)}</h3>
+                <h3 className="font-base ">{t.eta}</h3>
+              </div>
+            ))}
           </div>
         </div>
       </div>
