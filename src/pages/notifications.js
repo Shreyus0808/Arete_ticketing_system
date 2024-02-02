@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import api from "../Api.js";
+
 import about from "../images/about image.png";
 import user from "../images/user.png";
 
-function Dashboard() {
+function Notifications() {
+  const [notification, setNotification] = useState([]);
+  const fetchNotification = async () => {
+    try {
+      const uid = 1;
+      const response = await api.get(`/notifications/all`);
+      if (Array.isArray(response.data)) {
+        setNotification(response.data.reverse());
+      } else {
+        console.error(response);
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchNotification();
+  }, []);
+
   return (
-    <div className="w-full h-screen p-4 px-6 bg-[#E9E9E9] flex flex-col divide-y-[3px]  divide-[#AAAAAA]">
+    <div className="w-full h-full p-4 px-6 bg-[#E9E9E9] flex flex-col divide-y-[3px]  divide-[#AAAAAA]">
       <div className="flex justify-between pb-1.5">
         <h2 className=" font-sans font-bold text-3xl text-[#AAAAAA]">
           Notifications
@@ -12,14 +33,17 @@ function Dashboard() {
         <img src={user} className="w-10 h-10 z-10"></img>
       </div>
       <div className="flex flex-col justify-between px-0 p-4">
-        <div className="bg-white p-2 rounded-xl flex items-center justify-between">
-          <div className="flex items-center">
-            <img src={about} className="w-8 h-10 z-10"></img>
-          </div>
+        <div className="bg-white p-2 rounded-xl divide-y-[3px]  items-center justify-between">
+          {notification.map((n) => (
+            <div className="flex py-2 justify-between w-full items-center">
+              <div className="flex items-center">
+                <img src={about} className="w-8 h-10 z-10"></img>
+                <h1 className=" pl-4">{n.notification}</h1>
+              </div>
 
-          <h1 className="flex-1 pl-4">Fix Login Issue</h1>
-
-          <h1 className="text-right">12th Jan 2023</h1>
+              <h1 className="text-right">{n.created_at}</h1>
+            </div>
+          ))}
         </div>
       </div>
       <p className="text-center pt-10 text-gray-400 text-xs flex justify-center">
@@ -57,4 +81,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default Notifications;

@@ -7,7 +7,7 @@ function Dashboard() {
 
   return (
     <>
-      <div className="w-full h-screen p-4 px-6 bg-[#E9E9E9] flex flex-col divide-y-[3px]  divide-[#AAAAAA]">
+      <div className="w-full h-full p-4 px-6 bg-[#E9E9E9] flex flex-col divide-y-[3px]  divide-[#AAAAAA]">
         <div className="flex justify-between pb-1.5">
           <h2 className=" font-sans font-bold text-3xl text-[#AAAAAA]">
             Dashboard
