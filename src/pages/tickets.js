@@ -95,7 +95,7 @@ function Tickets() {
                 <input
                   type="text"
                   className="border rounded-md px-2 py-1 ml-2 bg-gray-200"
-                  placeholder="Jeff Joji"
+                  placeholder="alpha"
                 />
               </div>
               <div className="flex items-center">
