@@ -131,7 +131,7 @@ function Tickets() {
                 placeholder="Write your ticket description here.."
               />
             </div>
-            <div className="text-end p-8">
+            <div className="text-end p-8 pr-20">
               <button className="border shadow-md w-28 h-12 rounded-xl hover:bg-gray-300 text-lg font-semibold">
                 Add Ticket
               </button>
