@@ -8,13 +8,16 @@ const login = () => {
       <div className="w-screen h-screen flex items-center justify-center ">
         <div className="w-full flex justify-center items-center">
           <img src={logo} className="animate-pulse"></img>
-          <div className="space-x-4">
-            <button className="border h-16 hover:text-[#40E0D0] bg-white w-40 font-semibold rounded-2xl">
+          <div className="space-x-10">
+            <a href="/" className="h-16 hover:text-white font-bold text-2xl">
               Login as Admin
-            </button>
-            <button className="border h-16 hover:text-[#40E0D0] w-40 font-semibold bg-white rounded-2xl">
+            </a>
+            <a
+              href="/"
+              className=" h-16 hover:text-white  font-bold text-2xl  "
+            >
               Login as User
-            </button>
+            </a>
           </div>
         </div>
       </div>

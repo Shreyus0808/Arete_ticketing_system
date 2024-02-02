@@ -72,9 +72,17 @@ function Tickets() {
                 </p>
               </div>
             </div>
-            <div className="grid grid-cols-3">
+            <div className="grid grid-cols-4">
               <div className="flex">
                 <p>Assigned To:</p>
+                <input
+                  type="text"
+                  className="border rounded-md px-2 py-1 ml-2 bg-gray-200"
+                  placeholder="Jeff Joji"
+                />
+              </div>
+              <div className="flex">
+                <p>Project name:</p>
                 <input
                   type="text"
                   className="border rounded-md px-2 py-1 ml-2 bg-gray-200"
@@ -88,7 +96,7 @@ function Tickets() {
                 <select
                   id="priority"
                   name="priority"
-                  className="border rounded-md px-2 py-1 bg-gray-200"
+                  className="border rounded-md px-2 py-1 bg-gray-200 w-56"
                 >
                   <option value="low">Low</option>
                   <option value="medium">Medium</option>
@@ -110,7 +118,7 @@ function Tickets() {
               <p>Description :</p>
               <input
                 type="text"
-                className="border rounded-md bg-gray-200 px-2 py-1 ml-2 w-[965px] h-24"
+                className="border rounded-md bg-gray-200 px-2 py-1 ml-2 w-[1070px] h-24"
                 placeholder="Write your ticket description here.."
               />
             </div>
