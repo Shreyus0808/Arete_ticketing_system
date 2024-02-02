@@ -10,7 +10,7 @@ import dashboard from "./pages/dashboard.js";
 import Sidebar from "./components/sidebar.js";
 import tickets from "./pages/tickets.js";
 import notifications from "./pages/notifications.js";
-
+import analysis from "./pages/analysis.js";
 
 function App() {
   document.body.style = "background: #ffffffff";
@@ -23,6 +23,7 @@ function App() {
             <Route path="/" exact component={dashboard} />
             <Route path="/tickets" exact component={tickets} />
             <Route path="/notifications" exact component={notifications} />
+            <Route path="/analysis" exact component={analysis} />
           </Switch>
         </div>
       </div>

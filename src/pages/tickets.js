@@ -60,8 +60,68 @@ function Tickets() {
           <h2 className=" font-sans font-bold text-3xl text-[#AAAAAA]">
             Tickets
           </h2>
+
           <img src={user} className="w-10 h-10 z-10"></img>
         </div>
+        <div className="p-4 space-y-3 ">
+          <div className="bg-white rounded-xl pl-12  ">
+            <div className="flex pt-6 pb-6">
+              <div>
+                <p className="text-xl font-sans font-semibold ">
+                  Create a New Ticket
+                </p>
+              </div>
+            </div>
+            <div className="grid grid-cols-3">
+              <div className="flex">
+                <p>Assigned To:</p>
+                <input
+                  type="text"
+                  className="border rounded-md px-2 py-1 ml-2 bg-gray-200"
+                  placeholder="Jeff Joji"
+                />
+              </div>
+              <div className="flex items-center">
+                <label htmlFor="priority" className="mr-2">
+                  Priority:
+                </label>
+                <select
+                  id="priority"
+                  name="priority"
+                  className="border rounded-md px-2 py-1 bg-gray-200"
+                >
+                  <option value="low">Low</option>
+                  <option value="medium">Medium</option>
+                  <option value="high">High</option>
+                  <option value="very_high">Very High</option>
+                  <option value="critical">Critical</option>
+                </select>
+              </div>
+              <div className="flex">
+                <p>ETA:</p>
+                <input
+                  type="text"
+                  className="border rounded-md px-2 py-1 ml-2 bg-gray-200"
+                  placeholder="02/02/24"
+                />
+              </div>
+            </div>
+            <div className="flex pt-3 ">
+              <p>Description :</p>
+              <input
+                type="text"
+                className="border rounded-md bg-gray-200 px-2 py-1 ml-2 w-[965px] h-24"
+                placeholder="Write your ticket description here.."
+              />
+            </div>
+            <div className="text-end p-8">
+              <button className="border shadow-md w-28 h-12 rounded-xl hover:bg-gray-300 text-lg font-semibold">
+                Add Ticket
+              </button>
+            </div>
+          </div>
+        </div>
+
         <div className=" space-y-3  px-0 p-4">
           <div className="bg-white rounded-xl py-3">
             <div className="grid grid-cols-8 text-center">
@@ -76,16 +136,16 @@ function Tickets() {
           </div>
           <div className="bg-white rounded-xl">
             <div className="grid grid-cols-8 text-center">
-              <h3 className="font-bold">ID</h3>
-              <h3 className="font-bold ">Ticket Status</h3>
-              <h3 className="font-bold col-span-2">
+              <h3 className="font-base">ID</h3>
+              <h3 className="font-base ">Ticket Status</h3>
+              <h3 className="font-base col-span-2">
                 Description kfvkjdshlkd kjsdjk skdjh sdkfj kdfjh kjdshf ksjdhfs
                 jkdsfh kjfhds idfsh kjhdf
               </h3>
-              <h3 className="font-bold ">Assigned By</h3>
-              <h3 className="font-bold ">Project</h3>
-              <h3 className="font-bold ">Priority</h3>
-              <h3 className="font-bold ">ETA</h3>
+              <h3 className="font-base ">Assigned By</h3>
+              <h3 className="font-base ">Project</h3>
+              <h3 className="font-base ">Priority</h3>
+              <h3 className="font-base ">ETA</h3>
             </div>
           </div>
         </div>
